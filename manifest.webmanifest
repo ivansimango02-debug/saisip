@@ -1,0 +1,17 @@
+{
+  "name": "SaiSip \u2013 Water Reminder for Sai",
+  "short_name": "SaiSip",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fff6fa",
+  "theme_color": "#ff5f9e",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
