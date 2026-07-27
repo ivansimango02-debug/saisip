@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ff4f9a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="SaiSip" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+  <link rel="stylesheet" href="style.css" />
+  <title>SaiSip</title>
+</head>
+<body>
+  <main class="app">
+    <section id="home" class="page active">
+      <header>
+        <div>
+          <p class="eyebrow" id="todayLabel"></p>
+          <h1 id="greeting">Good morning, Sai 🩷</h1>
+          <p class="sub">Ivan loves you. Now drink some water 💧</p>
+        </div>
+        <button class="icon-btn" id="notifyBtn" aria-label="Enable reminders">🔔</button>
+      </header>
+
+      <div class="hero card">
+        <div class="drop-wrap">
+          <div class="drop"><span id="percent">0%</span></div>
+        </div>
+        <div class="hero-copy">
+          <span>Today</span>
+          <strong><b id="todayMl">0</b> / <b id="goalMl">2000</b> ml</strong>
+          <small id="remaining">2,000 ml to go</small>
+        </div>
+      </div>
+
+      <div class="quick">
+        <button class="add" data-ml="250">+250 ml</button>
+        <button class="add" data-ml="500">+500 ml</button>
+        <button class="add" id="customBtn">Custom</button>
+      </div>
+
+      <div class="grid">
+        <div class="card stat"><span>🔥 Streak</span><strong id="streak">0 days</strong></div>
+        <div class="card stat"><span>🏆 Best streak</span><strong id="bestStreak">0 days</strong></div>
+      </div>
+
+      <div class="card">
+        <span class="label">⏰ Next reminder</span>
+        <strong id="nextReminder">Not scheduled</strong>
+      </div>
+
+      <div class="love card">
+        <span>💌 Ivan's message for you</span>
+        <p id="funnyMessage"></p>
+      </div>
+
+      <div class="card first-day">
+        <span>🌸 SaiSip journey</span>
+        <p id="startedOn">Your journey starts today.</p>
+      </div>
+    </section>
+
+    <section id="history" class="page">
+      <header><div><p class="eyebrow">Your journey</p><h1>History 📊</h1><p class="sub">Every sip counts, Sai.</p></div></header>
+      <div class="card">
+        <div class="history-head"><strong>Last 7 days</strong><span id="weekAverage"></span></div>
+        <div id="chart" class="chart"></div>
+      </div>
+      <div class="grid">
+        <div class="card stat"><span>💧 Total</span><strong id="totalAll">0 L</strong></div>
+        <div class="card stat"><span>🎯 Goals hit</span><strong id="goalsHit">0</strong></div>
+        <div class="card stat"><span>📅 Days tracked</span><strong id="daysTracked">1</strong></div>
+        <div class="card stat"><span>✨ Best day</span><strong id="bestDay">0 ml</strong></div>
+      </div>
+      <div class="card">
+        <strong>Recent log</strong>
+        <div id="log" class="log"></div>
+      </div>
+    </section>
+
+    <section id="settings" class="page">
+      <header><div><p class="eyebrow">Make it yours</p><h1>Settings 🎀</h1><p class="sub">Tiny changes. Happier hydration.</p></div></header>
+      <div class="card settings">
+        <label>Daily goal (ml)<input id="goalInput" type="number" min="250" step="50"></label>
+        <label>Remind me every
+          <select id="intervalInput">
+            <option value="30">30 minutes</option>
+            <option value="60">1 hour</option>
+            <option value="90">1.5 hours</option>
+            <option value="120">2 hours</option>
+          </select>
+        </label>
+        <div class="row">
+          <label>Start<input id="startInput" type="time"></label>
+          <label>Quiet after<input id="endInput" type="time"></label>
+        </div>
+        <label class="toggle"><span>Reminders</span><input id="remindersInput" type="checkbox"></label>
+        <button class="primary" id="saveSettings">Save settings 🩷</button>
+      </div>
+      <div class="card">
+        <strong>About SaiSip</strong>
+        <p class="muted">Made with 🩷 for Sai Akshaya.</p>
+        <p class="muted" id="installHint">Open in Safari and choose “Add to Home Screen” to install.</p>
+      </div>
+      <button class="danger" id="resetBtn">Reset all SaiSip data</button>
+    </section>
+
+    <nav>
+      <button class="nav active" data-page="home"><span>💧</span>Today</button>
+      <button class="nav" data-page="history"><span>📊</span>History</button>
+      <button class="nav" data-page="settings"><span>⚙️</span>Settings</button>
+    </nav>
+  </main>
+  <div id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
